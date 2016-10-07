@@ -17,6 +17,7 @@ fn main() {
     // my Opt
     // more scala styled.
     // ...
+
 }
 
 
@@ -44,10 +45,6 @@ impl<T> Opt<T> {
             Opt::Some(x) => f(x),
             Opt::None => if_empty()
         }
-    }
-
-    fn get(self) -> T {
-        self.fold(|| panic!(), identity)
     }
 
     fn get_or_else<F>(self, if_empty: F) -> T
